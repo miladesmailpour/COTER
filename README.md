@@ -43,8 +43,8 @@ Test cases
 ## Questions
 
 please contact for more information via
-- [GitHub](https://github.com/andythepee)
-- [GitHub](https://github.com/rudrijoshi)
-- [GitHub](https://github.com/miladesmailpour)
+- [Andrew Persaud](https://github.com/andythepee)
+- [Rudri Joshi](https://github.com/rudrijoshi)
+- [Milad Esmaeelpour](https://github.com/miladesmailpour)
 
   
