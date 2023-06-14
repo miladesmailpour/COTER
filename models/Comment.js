@@ -14,14 +14,6 @@ Comment.init({
             len: [100]
         }
     },
-    user_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'user',
-            key: 'id'
-        }
-    },
     tweet_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
