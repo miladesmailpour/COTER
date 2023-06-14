@@ -1,23 +1,23 @@
 const User = require('./User');
-const newtweet = require('./Newtweet');
-const Comment = require('./Comments');
+const Tweet = require('./Tweet');
+const Comment = require('./Comment');
 
-User.hasMany(newtweet, {
+User.hasMany(Tweet, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'
 });
 
-newtweet.belongsTo(User, {
+Tweet.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-newtweet.hasMany(Comment, {
-    foreignKey: 'newtweet_id',
+Tweet.hasMany(Comment, {
+    foreignKey: 'tweet_id',
     onDelete: 'CASCADE'
 });
 
-Comment.belongsTo(newtweet, {
-    foreignKey: 'newtweet_id'
+Comment.belongsTo(Tweet, {
+    foreignKey: 'tweet_id'
 });
 
 User.hasMany(Comment, {
@@ -29,4 +29,4 @@ Comment.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-module.exports = { User, newtweet, Comment };
+module.exports = { User, Tweet, Comment };
