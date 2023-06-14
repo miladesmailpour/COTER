@@ -30,9 +30,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
-// app.use(routes);
+app.use(routes);
 // this line will replace with line above
-app.get("/", (req, res) => console.log("first test API available"));
+// app.get("/", (req, res) => console.log("first test API available"));
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Now listening http://localhost:" + PORT));
