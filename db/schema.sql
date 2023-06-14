@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS coter_db;
+CREATE DATABASE coter_db;
