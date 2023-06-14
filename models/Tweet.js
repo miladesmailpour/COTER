@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Newtweet extends Model { }
+class Tweet extends Model { }
 
-Newtweet.init(
+Tweet.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -32,8 +32,8 @@ Newtweet.init(
         sequelize,
         timestamps: false,
         freezeTableName: true,
-        modelName: 'newtweet'
+        modelName: 'tweet'
     }
 );
 
-module.exports = Newtweet;
+module.exports = Tweet;
