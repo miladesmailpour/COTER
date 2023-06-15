@@ -8,11 +8,7 @@ Comment.init({
         autoIncrement: true
     },
     comment_text: {
-        type: DataTypes.STRING,
-        validate: {
-
-            len: [100]
-        }
+        type: DataTypes.TEXT
     },
     tweet_id: {
         type: DataTypes.INTEGER,
