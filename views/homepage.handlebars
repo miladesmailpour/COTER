@@ -1,0 +1,10 @@
+<h1>All Cote should Display</h1>
+<section>
+{{#each tweets as |tweet| }}
+<div>
+<h3>
+    {{tweet.id}} - {{tweet.user.username}}: {{tweet.cote}} created at: {{tweet.date_created}}
+</h3>
+</div>
+{{/each}}
+</section>
