@@ -2,11 +2,6 @@ const router = require('express').Router();
 const { Comment, User, Tweet } = require('../models');
 
 router.get('/', async (req, res) => {
-  console.log('TEST: homeRoutes configured!')
-});
-module.exports = router;
-
-router.get('/', async (req, res) => {
   try {
     const tweetData = await Tweet.findAll({
       include: [
