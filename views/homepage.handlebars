@@ -1,10 +1,21 @@
-<h1>All Cote should Display</h1>
-<section>
-{{#each tweets as |tweet| }}
-<div>
-<h3>
-    {{tweet.id}} - {{tweet.user.username}}: {{tweet.cote}} created at: {{format_date tweet.date_created}}
-</h3>
+<div id="left-sidebar">
+    <div id="avatar">
+        <img src="/images/avatar.png" alt="Avatar">
+    </div>
+    <h3>USER NAME</h3>
 </div>
+<div id="main-section">
+<section>
+<h1>All Cote should Display</h1>
+{{#each tweets as |tweet| }}
+    {{#if logged_in}}
+        {{>cote-details logged_in="{{logged_in}}"}}
+    {{else}}
+        {{>cote-details logged_in=false}}
+    {{/if}}
 {{/each}}
 </section>
+</div>
+<div id="right-sidebar">
+    <h4>Tech News</h4>
+</div>
