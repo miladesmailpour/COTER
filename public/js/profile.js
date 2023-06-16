@@ -39,10 +39,10 @@ const newFormHandler = async (event) => {
   };
   
   document
-    .querySelector('.new-profile')
+    .querySelector('#new-profile')
     .addEventListener('submit', newFormHandler);
   
   document
-    .querySelector('.profile')
+    .querySelector('#profile')
     .addEventListener('click', delButtonHandler);
   
