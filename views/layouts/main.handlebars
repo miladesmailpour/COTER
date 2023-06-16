@@ -19,18 +19,19 @@
 <body>
     <header class="main-header">
 
-            <div class="logo">
-                <h1>COTER!</h1>
-                <h6>Cote your code</h6>
-            </div>
+        <div class="logo">
+            <h1>COTER!</h1>
+            <h6>Cote your code</h6>
+        </div>
 
     </header>
+
     <nav class="nav-bar">
         {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
+        <button class="" id="profile"><a href="/profile">Profile</a></button> |
+        <button class="" id="logout">logout</button>
         {{else}}
-        <a href="/login">login</a>
+        <button class="" id="logout"><a href="/login">login</a></button>
         {{/if}}
     </nav>
 

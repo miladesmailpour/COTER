@@ -7,26 +7,28 @@
     --font-color-dark: #f96e46;
     --font-color-light: #f9c846;
     --section-background: #8b9c8f;
-    --A:#ef476f;
-    --B:#ffd166;
-    --C:#06d6a0;
-    --D:#118ab2;
-    --E:#073b4c;
-    --F:#f96e46;
-    --G:#0aff99;
-    --H:#fcfbfb;
+    --A: #ef476f;
+    --B: #ffd166;
+    --C: #06d6a0;
+    --D: #118ab2;
+    --E: #073b4c;
+    --F: #f96e46;
+    --G: #0aff99;
+    --H: #fcfbfb;
 
 }
 
 body {
     background-color: var(--D);
 }
-.main-header{
+
+.main-header {
     /* background-color: var(--D); */
     background: linear-gradient(90deg, var(--E), var(--A));
     height: 100px;
 }
-.logo{
+
+.logo {
     font-family: 'Times New Roman', Times, serif;
     font-size: 35px;
     font-weight: bolder;
@@ -44,9 +46,11 @@ body {
     -webkit-animation: AnimateBG 20s ease infinite;
     animation: AnimateBG 10s ease infinite;
 }
-.logo h1{
+
+.logo h1 {
     font-weight: bold;
 }
+
 .nav-bar {
     display: flex;
     background-color: var(--E);
@@ -55,6 +59,9 @@ body {
     justify-content: flex-end;
     padding: 10px;
 }
+
+
+
 button {
     text-decoration: none;
     padding: 5px;
@@ -64,19 +71,21 @@ button {
     border-radius: 5px;
     box-shadow: 1px 1px 1px var(--D);
 }
-button:hover{
+
+button:hover {
     background-color: var(--card-background);
     color: var(--font-color-dark);
     text-shadow: 1px 1px 1px var(--font-color-light);
     box-shadow: 1px 1px 1px var(--font-color-dark);
 }
 
-button:active{
+button:active {
     background-color: var(--font-color-dark);
     color: var(--font-color-light);
     text-shadow: 1px 1px 1px var(--font-color-dark);
     box-shadow: 1px 1px -1px var(--font-color-dark);
 }
+
 main {
     flex: 1 1 200px;
     display: flex;
@@ -85,26 +94,32 @@ main {
     background-color: var(--B);
     margin: 0;
 }
-#left-sidebar, #right-sidebar {
+
+#left-sidebar,
+#right-sidebar {
     position: relative;
     padding: 10px;
     margin: 15px;
     color: var(--E);
-    font-family: 'Georgia','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Georgia', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 20px;
     text-shadow: 1px 1px 1px var(--D);
     text-align: center;
 }
-#left-sidebar{
+
+#left-sidebar {
     width: 15%;
 }
-#right-sidebar{
+
+#right-sidebar {
     width: 20%;
 }
+
 #left-sidebar h3 {
     font-size: 1.30rem;
     font-weight: bold;
 }
+
 #main-section {
     flex: 1 1 200px;
     display: flex;
@@ -116,39 +131,50 @@ main {
     padding: 10px;
     width: 40%;
 }
-#cote{
+
+#cote {
     margin: 10px;
     flex: 1 0 500px;
     background-color: var(--D);
     width: 800px;
     color: var(--font-color-dark);
     border: 2px solid var(--nav-background);
-    border-radius: 10px ;
+    border-radius: 10px;
 }
-#cote-header{
+
+#cote-header {
     margin: 0;
     padding: 10px;
     background-color: var(--E);
     color: var(--B);
     /* border-radius: 10px; */
 }
+
+a {
+    text-decoration: none;
+    color: var(--B);
+}
+
 #cote-body {
     padding: 10px;
     color: var(--H);
 }
+
 #cote-footer {
     padding: 5px;
     margin: 5px;
     background-color: var(--C);
     border-radius: 5px;
 }
-#cote-date{
+
+#cote-date {
     /* position: relative;
     left: 550px; */
     display: flex;
     justify-content: flex-end;
 }
-.cote-btn{
+
+.cote-btn {
     background-color: var(--card-background);
     color: var(--font-color-dark);
     text-shadow: 1px 1px 1px var(--font-color-light);
@@ -156,7 +182,8 @@ main {
     font-size: 11px;
     padding: 2px 4px;
 }
-#avatar img{
+
+#avatar img {
     width: 250px;
     border-radius: 50%;
     border-right: 3px dotted var(--font-color-dark);
@@ -190,4 +217,8 @@ main {
     100% {
         background-position: 0% 50%;
     }
+}
+
+@media screen {
+    
 }

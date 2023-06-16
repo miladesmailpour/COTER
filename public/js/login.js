@@ -15,7 +15,7 @@ async function loginFormHandler(event) {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.reload();
     } else {
       alert('Failed to log in');
     }
