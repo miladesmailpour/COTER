@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-auto">
+        <h2>Welcome to Cote, {{username}}</h2>
+    </div>
+</div>
+<div class="row mt-4">
+    <div class="col-md-6">
+        <h3>What's on your mind....Just Post It!!!</h3>
+
+        <form class="form new-cote-form">
+            <div class="form-group">
+                <label for="cote-descr">Cote description:</label>
+                <input class="form-input" type="text" id="cote-descr" name="cote-descr" />
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Smash the button</button>
+            </div>
+        </form>
+    </div>
+
+    {{#if tweet.length}}
+    <div class="col-md-6 cote-list">
+        <h3>Take a Look at your Cotes:</h3>
+
+        {{#each tweet as |t|}}
+        <div class="row mb-2">
+            <div class="col-md-8">
+                <h4><a href="/tweet/{{tweet.id}}">{{tweet.cote}}</a></h4>
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-sm btn-danger" data-id="{{tweet.id}}">DELETE</button>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+</div>
+
+<script src="/js/profile.js"></script>
