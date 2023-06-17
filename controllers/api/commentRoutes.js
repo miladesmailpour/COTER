@@ -12,20 +12,34 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/:id', async (req, res) => {
-    try {
-        const commentData = await Comment.findAll({
-            where: {
-                id: req.params.id
-            }
-        });
-        res.json(commentData);
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    }
-});
+// router.get('/:id', async (req, res) => {
+//     try {
+//         const commentData = await Comment.findAll({
+//             where: {
+//                 id: req.params.id
+//             }
+//         });
+//         res.json(commentData);
+//     } catch (err) {
+//         console.log(err);
+//         res.status(500).json(err);
+//     }
+// });
 
+router.get('/tweet/:id', async (req, res) => {
+    try {
+      const commentsData = await Comment.findAll({
+        where: {
+          tweet_id: req.params.id,
+        },
+      });
+      const comments = commentsData.map((comment) => comment.get({ plain: true }));
+      res.status(200).json(comments);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+  
 router.post('/', withAuth, async (req, res) => {
     try {
         if (req.session) {

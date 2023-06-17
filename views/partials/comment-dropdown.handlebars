@@ -1,0 +1,10 @@
+<div class="comment-dropdown">
+  <button class="comment-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Show Comments
+  </button>
+  <div class="dropdown-menu">
+    {{#each comments as |comment|}}
+      <div class="dropdown-item">{{comment.comment_text}}</div>
+    {{/each}}
+  </div>
+</div>
