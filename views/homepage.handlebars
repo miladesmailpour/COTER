@@ -39,22 +39,7 @@
 </script>
 </section>
 </div>
-<div id="right-sidebar">
-    <h4>Tech News</h4>
-</div>
 
-
-    <section>
-        <h1>All Cote should Display</h1>
-        {{#each tweets as |tweet| }}
-        {{#if logged_in}}
-        {{>cote-details logged_in="{{logged_in}}"}}
-        {{else}}
-        {{>cote-details logged_in=false}}
-        {{/if}}
-        {{/each}}
-    </section>
-</div>
 <div id="right-sidebar">
     <h4>Tech News</h4>
     {{>news}}

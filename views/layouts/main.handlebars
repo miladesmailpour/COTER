@@ -44,25 +44,6 @@
 
     </footer>
 
-    <!-- Render script for logged in users only -->
-
-  <header class="main-header">
-    <div class="logo">
-      <h1>COTER!</h1>
-      <h6>Cote your code</h6>
-    </div>
-  </header>
-
-  <nav class="nav-bar">
-
-    {{#if logged_in}}
-    <button class="" id="home"><a href="/">Home</a></button> <!-- Home button -->
-    <button class="" id="profile"><a href="/profile">Profile</a></button> |
-    <button class="" id="logout">logout</button>
-    {{else}}
-    <button class="" id="logout"><a href="/login">login</a></button>
-    {{/if}}
-
 
     <script src="/js/comment-dropdown.js"></script>
 
