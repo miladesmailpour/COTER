@@ -194,6 +194,13 @@ a {
     background-color: var(--B);
 }
 
+.no-comments {
+    color: gray;
+    font-style: italic;
+  }
+  
+
+
 #news {
     flex: 1;
     height: 250px;
@@ -213,6 +220,7 @@ a {
 #news-title{
     font-size: 1.0rem;
 } */
+
 
 
 @-webkit-keyframes AnimateBG {

@@ -7,7 +7,7 @@ document.querySelectorAll('.comment-dropdown-btn').forEach((button) => {
         dropdownMenu.classList.remove('show');
       } else {
         // Fetch comments for the tweetId
-        const response = await fetch('/api/comments');
+        const response = await fetch(`/api/comments/tweet/${tweetId}`);
         if (response.ok) {
           const comments = await response.json();
           renderComments(comments, dropdownMenu);
@@ -21,11 +21,20 @@ document.querySelectorAll('.comment-dropdown-btn').forEach((button) => {
   
   function renderComments(comments, dropdownMenu) {
     dropdownMenu.innerHTML = '';
-    comments.forEach((comment) => {
-      const commentElement = document.createElement('div');
-      commentElement.classList.add('dropdown-item');
-      commentElement.textContent = comment.comment_text;
-      dropdownMenu.appendChild(commentElement);
-    });
+  
+    if (comments.length === 0) {
+      const noCommentsElement = document.createElement('div');
+      noCommentsElement.classList.add('dropdown-item', 'no-comments');
+      noCommentsElement.textContent = 'No comments available.';
+      dropdownMenu.appendChild(noCommentsElement);
+    } else {
+      comments.forEach((comment) => {
+        const commentElement = document.createElement('div');
+        commentElement.classList.add('dropdown-item');
+        commentElement.textContent = comment.comment_text;
+        dropdownMenu.appendChild(commentElement);
+      });
+    }
   }
+  
   
