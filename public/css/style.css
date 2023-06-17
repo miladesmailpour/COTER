@@ -189,7 +189,11 @@ a {
     border-right: 3px dotted var(--font-color-dark);
     background-color: var(--B);
 }
-
+.no-comments {
+    color: gray;
+    font-style: italic;
+  }
+  
 
 @-webkit-keyframes AnimateBG {
     0% {
