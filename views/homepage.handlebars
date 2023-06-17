@@ -5,6 +5,45 @@
     <h3>{{user.username}}:</h3>
 </div>
 <div id="main-section">
+<section>
+<h1>All Cote should Display</h1>
+<!-- Render the cote-details partial with likes count -->
+{{#each tweets as |tweet| }}
+  {{#if logged_in}}
+    {{> cote-details logged_in="{{logged_in}}" likes=tweet.likes}}
+  {{else}}
+    {{> cote-details logged_in=false likes=tweet.likes}}
+  {{/if}}
+{{/each}}
+
+<!-- Like Cote script -->
+<script>
+  const likeButtons = document.querySelectorAll('.like-btn');
+  likeButtons.forEach(button => {
+    button.addEventListener('click', async (event) => {
+      const coteId = event.target.getAttribute('data-id');
+      const response = await fetch(`/api/tweets/${coteId}/like`, {
+        method: 'POST',
+      });
+
+      if (response.ok) {
+        // Update the like count on the button
+        const likeCountElement = button.nextElementSibling;
+        const currentLikeCount = parseInt(likeCountElement.textContent);
+        likeCountElement.textContent = currentLikeCount + 1;
+      } else {
+        alert('Failed to like the Cote');
+      }
+    });
+  });
+</script>
+</section>
+</div>
+<div id="right-sidebar">
+    <h4>Tech News</h4>
+</div>
+
+
     <section>
         <h1>All Cote should Display</h1>
         {{#each tweets as |tweet| }}
@@ -22,3 +61,4 @@
 </div>
 
 <script src="/js/homePage.js"></script>
+
