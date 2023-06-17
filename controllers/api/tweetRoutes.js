@@ -30,7 +30,25 @@ router.put('/:id', async(req, res) => {
         
     }
 })
-
+router.post('/:id/like', async (req, res) => {
+    try {
+      const tweet = await Tweet.findByPk(req.params.id);
+  
+      if (!tweet) {
+        res.status(404).json({ message: 'Tweet not found' });
+        return;
+      }
+  
+      // Increment the like count
+      tweet.likes += 1;
+      await tweet.save();
+  
+      res.status(200).json({ message: 'Cote liked successfully' });
+    } catch (error) {
+      res.status(500).json(error);
+    }
+  });
+  
 router.delete('/:id', async(req, res) => {
     try{
         const tweetData = await Tweet.destroy({
