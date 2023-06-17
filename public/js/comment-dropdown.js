@@ -7,7 +7,7 @@ document.querySelectorAll('.comment-dropdown-btn').forEach((button) => {
         dropdownMenu.classList.remove('show');
       } else {
         // Fetch comments for the tweetId
-        const response = await fetch('/api/comments/1');
+        const response = await fetch('/api/comments');
         if (response.ok) {
           const comments = await response.json();
           renderComments(comments, dropdownMenu);
