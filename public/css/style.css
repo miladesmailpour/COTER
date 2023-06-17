@@ -105,6 +105,8 @@ main {
     font-family: 'Georgia', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 20px;
     text-shadow: 1px 1px 1px var(--D);
+    display: flex;
+    flex-direction: column;
     text-align: center;
 }
 
@@ -114,6 +116,7 @@ main {
 
 #right-sidebar {
     width: 20%;
+    justify-content: center;
 }
 
 #left-sidebar h3 {
@@ -190,6 +193,25 @@ a {
     border-right: 3px dotted var(--font-color-dark);
     background-color: var(--B);
 }
+
+#news{
+    flex: 1;
+    height: 250px;
+    width: 250px;
+    text-align: center;
+    font-size: 1.0rem;
+}
+/* #news-link{
+    text-decoration: none;
+    color: var(--E);
+}
+#news-img{
+    height: 200px;
+    width: 200px;
+}
+#news-title{
+    font-size: 1.0rem;
+} */
 
 
 @-webkit-keyframes AnimateBG {
