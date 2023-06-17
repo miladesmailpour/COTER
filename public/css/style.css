@@ -98,12 +98,15 @@ main {
 #left-sidebar,
 #right-sidebar {
     position: relative;
+    flex: 1;
     padding: 10px;
     margin: 15px;
     color: var(--E);
     font-family: 'Georgia', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 20px;
     text-shadow: 1px 1px 1px var(--D);
+    display: flex;
+    flex-direction: column;
     text-align: center;
 }
 
@@ -113,6 +116,7 @@ main {
 
 #right-sidebar {
     width: 20%;
+    justify-content: center;
 }
 
 #left-sidebar h3 {
@@ -189,11 +193,35 @@ a {
     border-right: 3px dotted var(--font-color-dark);
     background-color: var(--B);
 }
+
 .no-comments {
     color: gray;
     font-style: italic;
   }
   
+
+
+#news {
+    flex: 1;
+    height: 250px;
+    width: 250px;
+    text-align: center;
+    font-size: 1.0rem;
+}
+
+/* #news-link{
+    text-decoration: none;
+    color: var(--E);
+}
+#news-img{
+    height: 200px;
+    width: 200px;
+}
+#news-title{
+    font-size: 1.0rem;
+} */
+
+
 
 @-webkit-keyframes AnimateBG {
     0% {
@@ -223,6 +251,114 @@ a {
     }
 }
 
-@media screen {
-    
+@media screen and (max-width: 992px) {
+    main {
+        flex-direction: row;
+        /* display: none; */
+        justify-content: center;
+    }
+
+    #main-section {
+        flex-direction: row;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        flex-direction: column;
+        /* display: none; */
+        /* justify-content: center; */
+    }
+
+    #main-section {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    main {
+        flex-direction: column;
+        /* display: none; */
+        /* justify-content: center; */
+    }
+
+    #main-section {
+        flex-direction: column;
+    }
+}
+
+.greeting {
+    padding-right: 5rem;
+    color: var(--A);
+    padding-left: 3rem;
+    padding-top: 1.5rem;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    /* outline is like border, but on the outside of the box instead of inside */
+    outline: 2px dashed var(--A);
+    outline-style: auto;
+    transition: all 0.5s ease-in-out;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    height: 800px;
+    width: 700px;
+
+}
+
+.text {
+    padding-left: 3rem;
+}
+
+.login-form1 {
+    flex: 1 0 100%;
+    padding: 1.5rem;
+    /* when the screen resizes, make it so our columns don't jump in size */
+    transition: flex-basis 500ms linear;
+    margin-bottom: 1.5rem;
+    margin-right: 5rem;
+    margin-left: 5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 8rem;
+    padding: 5rem;
+    font-size: 1.4rem;
+    font-weight: bolder;
+    color: var(--E);
+
+
+}
+
+.form-input {
+    width: 10rem;
+}
+
+.form-group1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 8rem;
+    padding: 2.95rem;
+    font-size: 1.4rem;
+    font-weight: bolder;
+    color: var(--E);
+}
+
+.signup-form {
+
+    flex: 1 0 100%;
+    padding: 1.5rem;
+    margin-right: 5rem;
+    margin-left: 10rem;
+    /* when the screen resizes, make it so our columns don't jump in size */
+    transition: flex-basis 500ms linear;
+    margin-bottom: 1.5rem;
+    padding-right: 5rem;
+
 }
