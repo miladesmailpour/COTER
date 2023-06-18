@@ -197,8 +197,8 @@ a {
 .no-comments {
     color: gray;
     font-style: italic;
-  }
-  
+}
+
 
 
 #news {
@@ -331,8 +331,6 @@ a {
     font-size: 1.4rem;
     font-weight: bolder;
     color: var(--E);
-
-
 }
 
 .form-input {
@@ -361,4 +359,43 @@ a {
     margin-bottom: 1.5rem;
     padding-right: 5rem;
 
+}
+
+.heading,
+h2 {
+    font-size: 3rem;
+}
+
+.form-group3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    font-size: 3rem;
+    color: var(--D);
+    text-align: center;
+}
+
+.row8 {
+    text-align: -webkit-right;
+    padding-top: 8rem;
+    font-weight: bolder;
+    color: var(--A);
+    font-size: 5rem;
+}
+
+
+
+.heading {
+    text-align: start;
+    color: var(--font-color-dark);
+    font-style: oblique;
+}
+
+
+.form-input1 {
+    width: 30rem;
+    height: 30rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
