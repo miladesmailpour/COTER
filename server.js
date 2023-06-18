@@ -10,11 +10,10 @@ const helpers = require('./utils/helpers');
 const hbs = exphbs.create({ helpers });
 const app = express();
 const PORT = process.env.PORT || 3001;
-// 300000
 const sess = {
   secret: "Super secret secret",
   cookie: {
-    maxAge: 700000,
+    maxAge: 300000,
     httpOnly: true,
     secure: false,
     sameSite: "strict",
