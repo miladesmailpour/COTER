@@ -12,7 +12,7 @@
   {{#if logged_in}}
     {{> cote-details logged_in="{{logged_in}}" likes=tweet.likes}}
   {{else}}
-    {{> cote-details logged_in=false likes=tweet.likes}}
+    {{> cote-details logged_in=true likes=tweet.likes}}
   {{/if}}
 {{/each}}
 
@@ -44,6 +44,7 @@
     <h4>Tech News</h4>
     {{>news}}
 </div>
-
+<script src="/js/logout.js"></script>
 <script src="/js/homePage.js"></script>
+    
 
