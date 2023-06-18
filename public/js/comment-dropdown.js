@@ -1,6 +1,6 @@
 document.querySelectorAll('.comment-dropdown-btn').forEach((button) => {
     button.addEventListener('click', async (event) => {
-      const tweetId = event.target.closest('#cote').dataset.id;
+      const tweetId = event.target.closest('.cote').dataset.id;
       const dropdownMenu = event.target.nextElementSibling;
   
       if (dropdownMenu.classList.contains('show')) {
