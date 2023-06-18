@@ -136,7 +136,7 @@ main {
     width: 40%;
 }
 
-#cote {
+.cote {
     margin: 10px;
     flex: 1 0 500px;
     background-color: var(--D);
