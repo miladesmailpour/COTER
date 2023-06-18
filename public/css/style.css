@@ -209,17 +209,21 @@ a {
     font-size: 1.0rem;
 }
 
-/* #news-link{
-    text-decoration: none;
-    color: var(--E);
+#cote-extend{
+    text-align: center;
+    display: none;
 }
-#news-img{
-    height: 200px;
-    width: 200px;
+#cote-extend input{
+    padding: 5px;
+    margin: 5px 5px 10px 5px;
+    background-color: var(--H);
+    border-radius: 5px;
+    width: 80%;
+    display: inline-block;
 }
-#news-title{
-    font-size: 1.0rem;
-} */
+#cote-extend button{
+    width: 15%;
+}
 
 
 

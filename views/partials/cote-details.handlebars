@@ -10,12 +10,19 @@
   <div id="cote-footer">
     <div id="cote-date">
       {{#if logged_in}}
-        <button class="cote-btn like-btn" data-id="{{id}}">&#9829;</button>
+
+        <button id="btn-extend" class="cote-btn like-btn" data-id="{{id}}">Add Comment</button> |
+        <button class="cote-btn like-btn" data-id="{{id}}">&#9829;</button> |
+        
       {{/if}}
       <span class="like-count">{{likes}}</span> likes
       created at: {{format_date date_created}}
     </div>
     {{> comment-dropdown comments=comments}}
+  </div>
+  <div id="cote-extend">
+    <input id="user-comment" type="text" placeholder="add your comment">
+    <button id="save-comment">Comment</button>
   </div>
 </div>
 
