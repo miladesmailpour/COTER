@@ -209,11 +209,11 @@ a {
     font-size: 1.0rem;
 }
 
-#cote-extend{
+.cote-extend{
     text-align: center;
     display: none;
 }
-#cote-extend input{
+.cote-extend input{
     padding: 5px;
     margin: 5px 5px 10px 5px;
     background-color: var(--H);
@@ -221,7 +221,7 @@ a {
     width: 80%;
     display: inline-block;
 }
-#cote-extend button{
+.cote-extend button{
     width: 15%;
 }
 

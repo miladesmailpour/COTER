@@ -11,7 +11,7 @@
     <div id="cote-date">
       {{#if logged_in}}
 
-        <button id="btn-extend" class="cote-btn" data-id="{{id}}">Add Comment</button> |
+        <button id="{{id}}" class="cote-btn btn-extend" data-id="{{id}}">Add Comment</button> |
         <button class="cote-btn like-btn" data-id="{{id}}">&#9829;</button> |
         
       {{/if}}
@@ -20,7 +20,7 @@
     </div>
     {{> comment-dropdown comments=comments}}
   </div>
-  <div id="cote-extend">
+  <div class="cote-extend" id="{{id}}">
     <input id="user-comment" type="text" placeholder="add your comment">
     <button id="save-comment">Comment</button>
   </div>

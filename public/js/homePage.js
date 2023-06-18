@@ -1,12 +1,12 @@
-const coteExtend=document.querySelector('#cote-extend');
-const btnExtend=document.querySelector('#btn-extend');
+const coteExtend=document.querySelectorAll('.cote-extend');
+const btnExtends=document.querySelectorAll('.btn-extend');
 const saveComment=document.querySelector('#save-comment');
 const userComment=document.querySelector('#user-comment');
 const body = document.body;
 const news=document.querySelector('#news');
-
-
 const likeButtons = document.querySelectorAll('.like-btn');
+
+
 likeButtons.forEach(button => {
   button.addEventListener('click', async (event) => {
     const coteId = event.target.getAttribute('data-id');
@@ -62,15 +62,30 @@ async function newsApi() {
         .catch(e=>console.log(e));
   
   }
-const btnExtendHandler = async (event) => {
-    event.preventDefault();
-    console.log('---------------')
-    if(coteExtend.style.display === 'none'){
-        coteExtend.setAttribute("style", "display: block;");
-    } else {
-        coteExtend.setAttribute("style", "display: none;");
-    }
-};
+
+// const btnExtendHandler = async (event) => {
+btnExtends.forEach(btn=>{
+    btn.addEventListener('click', async(event)=>{
+        const btnId = event.target.getAttribute('data-id')
+        console.log(btnId)
+        coteExtend.forEach(ex=>{
+            const exId = ex.getAttribute('id')
+            if(btnId === exId){
+                const display = ex.style.display;
+                if(!display){
+                    ex.setAttribute("style", "display: block;");
+                } 
+                if(display == 'none'){
+                    ex.setAttribute("style", "display: block;");
+                } 
+                if(display === 'block') {
+                    ex.setAttribute("style", "display: none;");
+                }
+            }
+        })
+    })
+})
+
 
 const saveCommentHandler = async (event) => {
     event.preventDefault();
@@ -95,7 +110,7 @@ const saveCommentHandler = async (event) => {
 };
 
 
-btnExtend.addEventListener('click', btnExtendHandler);
+// btnExtend.addEventListener('click', btnExtendHandler);
 saveComment.addEventListener('click', saveCommentHandler);
 
 newsApi();
