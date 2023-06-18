@@ -4,6 +4,26 @@ const saveComment=document.querySelector('#save-comment');
 const userComment=document.querySelector('#user-comment');
 const body = document.body;
 const news=document.querySelector('#news');
+
+
+const likeButtons = document.querySelectorAll('.like-btn');
+likeButtons.forEach(button => {
+  button.addEventListener('click', async (event) => {
+    const coteId = event.target.getAttribute('data-id');
+    const response = await fetch(`/api/tweets/${coteId}/like`, {
+      method: 'POST',
+    });
+    if (response.ok) {
+      // Update the like count on the button
+      const likeCountElement = button.nextElementSibling;
+      const currentLikeCount = parseInt(likeCountElement.textContent);
+      likeCountElement.textContent = currentLikeCount + 1;
+    } else {
+      alert('Failed to like the Cote');
+    }
+  });
+});
+
 async function newsApi() {
     const url = 'https://newsapi.org/v2/top-headlines?' +
                 'country=us&' +
@@ -43,6 +63,8 @@ async function newsApi() {
   
   }
 const btnExtendHandler = async (event) => {
+    event.preventDefault();
+    console.log('---------------')
     if(coteExtend.style.display === 'none'){
         coteExtend.setAttribute("style", "display: block;");
     } else {
