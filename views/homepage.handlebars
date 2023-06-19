@@ -1,31 +1,29 @@
 <div id="left-sidebar">
-    <div id="avatar">
-        <img src="/images/avatar.png" alt="Avatar">
-    </div>
-    <h3>{{user.username}}</h3>
+  <div id="avatar">
+    <img src="/images/avatar.png" alt="Avatar">
+  </div>
+  <h3>{{user.username}}</h3>
 </div>
 <div id="main-section">
-<section>
-<h1>All Cote should Display</h1>
-<!-- Render the cote-details partial with likes count -->
-{{#each tweets as |tweet| }}
-  {{#if logged_in}}
+  <section>
+    <h1>All Cote should Display</h1>
+    <!-- Render the cote-details partial with likes count -->
+    {{#each tweets as |tweet| }}
+    {{#if logged_in}}
     {{> cote-details logged_in="{{logged_in}}" likes=tweet.likes}}
-  {{else}}
+    {{else}}
     {{> cote-details logged_in=true likes=tweet.likes}}
-  {{/if}}
-{{/each}}
+    {{/if}}
+    {{/each}}
 
-</section>
+  </section>
 </div>
 
 <div id="right-sidebar">
-    <h4>Tech News</h4>
-    {{>news}}
+  <h4>Tech News</h4>
+  {{>news}}
 </div>
 
 {{!-- nice to move to main handlebars --}}
 <script src="/js/logout.js"></script>
 <script src="/js/homePage.js"></script>
-    
-

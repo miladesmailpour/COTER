@@ -12,12 +12,22 @@ router.get("/", async (req, res) => {
       ],
     });
     const tweets = (tweetData.map((tweet) => tweet.get({ plain: true }))).reverse();
+    let user = null;
+    if (req.session.user_id) {
+      const userData = await User.findByPk(req.session.user_id, {
+        attributes: { exclude: ["password"] },
 
+      });
+      user = userData.get({ plain: true });
+    }
+    console.log();
     res.render("homepage", {
       tweets,
+      user,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
