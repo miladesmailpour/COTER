@@ -2,11 +2,10 @@
 
 ## Description
 - To create an environment to build a network between developers to communicate through this specialized platform.
-  
 - An environment to help beginners fit into fast-growing developer community.
 - Breaks down the communication barrier.
 - Explored many libraries like handlebars, ORM, express.js, MVC, font-kit and much more including several third party APIs.
-- 
+
 ## Desgin and Develop by:
 - Rudri Joshi - full Stack engineer
 - Andrew Persaud - full Stack engineer
@@ -34,6 +33,8 @@
 ## Credits
 - Mark Alfano
 - Sal Hobbi
+- Source for the seeded quotes(https://techvify-software.com/35-best-coding-programming-quotes/)
+- Source for the seeded quotes(https://betterprogramming.pub/101-funny-programmer-quotes-76c7f335b92d)
 
 ## License
 
