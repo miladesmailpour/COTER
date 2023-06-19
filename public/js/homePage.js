@@ -1,7 +1,7 @@
 const coteExtend=document.querySelectorAll('.cote-extend');
 const btnExtends=document.querySelectorAll('.btn-extend');
-const saveComment=document.querySelector('#save-comment');
-const userComment=document.querySelector('#user-comment');
+const saveCommentBtns=document.querySelectorAll('.save-comment-btn');
+const userComments=document.querySelectorAll('.user-comment');
 const body = document.body;
 const news=document.querySelector('#news');
 const likeButtons = document.querySelectorAll('.like-btn');
@@ -63,11 +63,10 @@ async function newsApi() {
   
   }
 
-// const btnExtendHandler = async (event) => {
 btnExtends.forEach(btn=>{
     btn.addEventListener('click', async(event)=>{
         const btnId = event.target.getAttribute('data-id')
-        console.log(btnId)
+        // console.log(btnId)
         coteExtend.forEach(ex=>{
             const exId = ex.getAttribute('id')
             if(btnId === exId){
@@ -86,31 +85,55 @@ btnExtends.forEach(btn=>{
     })
 })
 
-
-const saveCommentHandler = async (event) => {
-    event.preventDefault();
-    const comment_text = userComment.value.trim();
-    const tweet_id = event.target.parentNode.parentNode.getAttribute('data-id');
-    // console.log(event.target.parentNode.parentNode.getAttribute('data-id'));
-
-    if(comment_text){
-        const response = await fetch(`/api/comments`, {
-            method: 'POST',
-            body: JSON.stringify({ comment_text, tweet_id }),
-            headers: {
-                'Content-Type': 'application/json',
-            },
+saveCommentBtns.forEach(btn=>{
+    btn.addEventListener('click', async(event)=>{
+        let tweet_id;
+        let comment_text;
+        console.log(event.target.getAttribute('id'));
+        const btnId =event.target.getAttribute('id');
+        userComments.forEach(input=>{
+            const inputId = input.getAttribute('id');
+            if(btnId === inputId){
+                comment_text = input.value.trim();
+                tweet_id = inputId;
+                console.log(tweet_id, comment_text);
+            }
         });
-        if (response.ok) {
-            document.location.reload();
-        } else {
-            alert('Comment Not saved, try again');
+        if(comment_text){
+            const response = await fetch('/api/comments', {
+                method: 'POST',
+                body: JSON.stringify({ comment_text, tweet_id }),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+            if(response.ok){
+                document.location.reload();
+            } 
+            else {
+                alert('Comment Not saved, try again');
+            }
         }
-    }
-};
+            // const comment_text = userComment.value.trim();
+            // const tweet_id = event.target.parentNode.parentNode.getAttribute('data-id');
+            // // console.log(event.target.parentNode.parentNode.getAttribute('data-id'));
+        
+            // if(comment_text){
+            //     const response = await fetch(`/api/comments`, {
+            //         method: 'POST',
+            //         body: JSON.stringify({ comment_text, tweet_id }),
+            //         headers: {
+            //             'Content-Type': 'application/json',
+            //         },
+            //     });
+            //     if (response.ok) {
+            //         // document.location.reload();
+            //     } else {
+            //         alert('Comment Not saved, try again');
+            //     }
+            // }
+    });
+});
 
-
-// btnExtend.addEventListener('click', btnExtendHandler);
-saveComment.addEventListener('click', saveCommentHandler);
 
 newsApi();
