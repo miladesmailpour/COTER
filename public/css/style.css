@@ -17,7 +17,9 @@
     --H: #fcfbfb;
 
 }
-
+.comment-dropdown-btn{
+    font-size: 11px;
+}
 body {
     background-color: var(--D);
 }

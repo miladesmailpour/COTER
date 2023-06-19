@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
         },
       ],
     });
-    const tweets = tweetData.map((tweet) => tweet.get({ plain: true }));
+    const tweets = (tweetData.map((tweet) => tweet.get({ plain: true }))).reverse();
 
     res.render("homepage", {
       tweets,
