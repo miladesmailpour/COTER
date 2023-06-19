@@ -2,7 +2,7 @@
     <div id="avatar">
         <img src="/images/avatar.png" alt="Avatar">
     </div>
-    <h3>{{user.username}}:</h3>
+    <h3>{{user.username}}</h3>
 </div>
 <div id="main-section">
 <section>
@@ -16,28 +16,6 @@
   {{/if}}
 {{/each}}
 
-<!-- Like Cote script -->
-{{!-- <script>
-  // move to the homPage js could deleted in review
-  const likeButtons = document.querySelectorAll('.like-btn');
-  likeButtons.forEach(button => {
-    button.addEventListener('click', async (event) => {
-      const coteId = event.target.getAttribute('data-id');
-      const response = await fetch(`/api/tweets/${coteId}/like`, {
-        method: 'POST',
-      });
-
-      if (response.ok) {
-        // Update the like count on the button
-        const likeCountElement = button.nextElementSibling;
-        const currentLikeCount = parseInt(likeCountElement.textContent);
-        likeCountElement.textContent = currentLikeCount + 1;
-      } else {
-        alert('Failed to like the Cote');
-      }
-    });
-  });
-</script> --}}
 </section>
 </div>
 
